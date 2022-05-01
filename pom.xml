@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>net.javaguides</groupId>
-	<artifactId>student-management-system</artifactId>
+	<artifactId>user-management-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>student-management-system</name>
+	<name>user-management-system</name>
 	<description>Student Management System using Spring Boot and Thymeleaf</description>
 	<properties>
 		<java.version>16</java.version>
@@ -58,6 +58,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
 

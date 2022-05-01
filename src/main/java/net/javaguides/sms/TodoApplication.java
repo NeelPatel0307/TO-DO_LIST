@@ -5,18 +5,19 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import net.javaguides.sms.entity.Student;
-import net.javaguides.sms.repository.StudentRepository;
+import net.javaguides.sms.repository.TodoRepository;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-public class StudentManagementSystemApplication implements CommandLineRunner{
+@EnableSwagger2
+public class TodoApplication implements CommandLineRunner{
 
 	public static void main(String[] args) {
-		SpringApplication.run(StudentManagementSystemApplication.class, args);
+		SpringApplication.run(TodoApplication.class, args);
 	}
 
 	@Autowired
-	private StudentRepository studentRepository;
+	private TodoRepository todoRepository;
 	
 	@Override
 	public void run(String... args) throws Exception {

@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Student Management System</a>
+  <a class="navbar-brand" href="#">ToDo Management System</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -22,7 +22,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/students}">Student Management</a>
+        <a class="nav-link" th:href="@{/user}">to-do Management</a>
       </li>
     </ul>
   </div>
@@ -32,39 +32,39 @@
 	<div class = "container">
 		<div class = "row">
 			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-				<h1 class = "text-center"> Update Student </h1>
+				<h1 class = "text-center"> Update To_do </h1>
 				<div class = "card-body">
-					<form th:action="@{/students/{id} (id=${student.id})}" th:object = "${student}" method="POST">
+					<form th:action="@{/user/{id} (id=${user.id})}" th:object = "${user}" method="POST">
 						<div class ="form-group">
-							<label> Student First Name </label>
+							<label> TASK NAME </label>
 							<input
 							type = "text"
-							name = "firstName"
-							th:field = "*{firstName}"
+							name = "taskName"
+							th:field = "*{taskName}"
 							class = "form-control"
-							placeholder="Enter Student First Name" 
+							placeholder="Enter Task"
 							/>
 						</div>
 						
 						<div class ="form-group">
-							<label> Student Last Name </label>
+							<label> DESCRIPTION </label>
 							<input
 							type = "text"
-							name = "lastName"
-							th:field = "*{lastName}"
+							name = "description"
+							th:field = "*{description}"
 							class = "form-control"
-							placeholder="Enter Student Last Name" 
+							placeholder="Enter Description of Task"
 							/>
 						</div>
 						
 						<div class ="form-group">
-							<label> Student Email </label>
+							<label> DEADLINE </label>
 							<input
 							type = "text"
-							name = "email"
-							th:field = "*{email}"
+							name = "deadline"
+							th:field = "*{deadline}"
 							class = "form-control"
-							placeholder="Enter Student Email" 
+							placeholder="Enter Deadline of Task"
 							/>
 						</div>
 						
