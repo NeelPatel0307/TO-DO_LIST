@@ -3,12 +3,11 @@ package net.javaguides.sms.controller;
 import net.javaguides.sms.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import net.javaguides.sms.service.TodoService;
+
+import java.security.Principal;
 
 @Controller
 public class TodoController {
@@ -21,7 +20,7 @@ public class TodoController {
 	}
 	
 	// handler method to handle list students and return mode and view
-	@GetMapping("/user")
+	@GetMapping("/")
 	public String listStudents(Model model) {
 		model.addAttribute("user", todoService.getAllStudents());
 		return "user";
@@ -40,7 +39,7 @@ public class TodoController {
 	@PostMapping("/user")
 	public String saveStudent(@ModelAttribute("user") User user) {
 		todoService.saveStudent(user);
-		return "redirect:/user";
+		return "redirect:/";
 	}
 	
 	@GetMapping("/user/edit/{id}")
@@ -63,7 +62,7 @@ public class TodoController {
 		
 		// save updated student object
 		todoService.updateStudent(existingUser);
-		return "redirect:/user";
+		return "redirect:/";
 	}
 	
 	// handler method to handle delete student request
@@ -71,7 +70,16 @@ public class TodoController {
 	@GetMapping("/user/{id}")
 	public String deleteStudent(@PathVariable Long id) {
 		todoService.deleteStudentById(id);
-		return "redirect:/user";
+		return "redirect:/";
 	}
+
+	@RequestMapping("whouser")
+	@ResponseBody
+	public Principal user(Principal principal){
+		return principal;
+	}
+
+
+
 	
 }
